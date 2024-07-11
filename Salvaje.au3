@@ -42,16 +42,13 @@ While $hunting
 		$colorShroomish1 = PixelSearch(965, 308, 985, 328, 0x9ac2ac)
 		$colorShroomish2 = PixelSearch(941, 266, 961, 286, 0xf2e1ce)
 		$colorSlakooth = PixelSearch(1111, 323, 1133, 343, 0xddd2c3)
-		$colorSilcoon = PixelSearch(931, 261, 991, 321, 0xe2dfec)
+		$colorSilcoon = PixelSearch(921, 251, 991, 321, 0xe2dfec)
 		$colorTaillow = PixelSearch(1004, 326, 1024, 346, 0x3b3e5d)
 		$Contador+=1
 
 
-		If  IsArray($colorWurmple) or  IsArray($colorZigzagoon) or (IsArray($colorCascoonOjo) and  IsArray($colorCascoon)) or (IsArray($colorShroomish1) and  IsArray($colorShroomish2)) or IsArray($colorSlakooth) or  IsArray($colorTaillow) Then
-			ConsoleWrite("CascoonOjo: " & $colorCascoonOjo  & @CRLF)
-			ConsoleWrite("Cascoon: " & $colorCascoon & @CRLF)
-			ConsoleWrite("Taillow: " & $colorTaillow & @CRLF)
-			ConsoleWrite("Silcoon: " & $colorSilcoon & @CRLF)
+		If  IsArray($colorWurmple) or  IsArray($colorZigzagoon) or (IsArray($colorCascoonOjo) and  IsArray($colorCascoon)) or (IsArray($colorShroomish1) and  IsArray($colorShroomish2)) or IsArray($colorSlakooth) or  IsArray($colorTaillow) or IsArray($colorSilcoon) Then
+
 			$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
 			while $result7 = 0
 				$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
