@@ -41,7 +41,7 @@ While $hunting
 		$Contador+=1
 
 		If  IsArray($colorWingull) or  IsArray($colorZigzagoon) or IsArray($colorPoochyena)  Then
-			ConsoleWrite($colorPoochyena)
+
 			$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
 			while $result7 = 0
 				$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
