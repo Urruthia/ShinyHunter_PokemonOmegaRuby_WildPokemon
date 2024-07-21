@@ -35,22 +35,21 @@ While $hunting
 		EndIf
 	Else
 	while $encuentro
-		$colorWurmple = PixelSearch(924, 231, 978, 334, 0xe7696f)
-		$colorWingull1  = PixelSearch(1032, 218, 1112, 298, 0x99daf7)
-		$colorWingull2  = PixelSearch(1030, 220, 1120, 320, 0x6396bd,15)
-		$colorWingull3  = PixelSearch(870, 210, 970, 320, 0x9fe3ff,15)
-		$colorWingull4  = PixelSearch(870, 210, 970, 320, 0x9ee2ff,15)
 		$colorZigzagoon  = PixelSearch(1040, 317, 1060, 337, 0x786d5b)
 		$colorTaillow = PixelSearch(1004, 326, 1024, 346, 0x3b3e5d)
+		$colorSkitty = PixelSearch(929, 272, 949, 292, 0xFCAFB6)
+		$colorNincada = PixelSearch(950, 293, 970, 313, 0xEFEFEF)
+		$colorWhismur = PixelSearch(977, 215, 997, 235, 0xF2D98A)
 		$Contador+=1
 
-		If  IsArray($colorWingull1) or  IsArray($colorWingull2) or  IsArray($colorWingull3) or  IsArray($colorWingull4) or  IsArray($colorZigzagoon) or IsArray($colorWurmple) or IsArray($colorTaillow) Then
-			#cs
-			ConsoleWrite("Wingull1: " & $colorWingull1 & @CRLF)
-			ConsoleWrite("Wingull2: " & $colorWingull2 & @CRLF)
-			ConsoleWrite("Wingull3: " & $colorWingull3 & @CRLF)
-			ConsoleWrite("Wingull4: " & $colorWingull4 & @CRLF)
-			#ce
+		If  IsArray($colorSkitty) or  IsArray($colorNincada) or  IsArray($colorWhismur)  or  IsArray($colorZigzagoon)  or IsArray($colorTaillow) Then
+
+			ConsoleWrite("Whismur: " & $colorWhismur & @CRLF)
+			ConsoleWrite("Skitty: " & $colorSkitty & @CRLF)
+			ConsoleWrite("Nincada:  " & $colorNincada & @CRLF)
+			ConsoleWrite("Taillow: " & $colorTaillow & @CRLF)
+			ConsoleWrite("Zigzagoon " & $colorZigzagoon & @CRLF)
+
 			$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
 			while $result7 = 0
 				$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
@@ -74,7 +73,7 @@ While $hunting
 			EndIf
 
 			Wend
-			ElseIf $Contador >= 55 then
+			ElseIf $Contador >= 65 then
 			send("{NUMPADADD down}")
 			Sleep(250)
 			send("{NUMPADADD up}")
