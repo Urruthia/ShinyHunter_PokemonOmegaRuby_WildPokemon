@@ -35,13 +35,21 @@ While $hunting
 		EndIf
 	Else
 	while $encuentro
-		$colorWingull  = PixelSearch(1042, 228, 2002, 288, 0x99daf7)
+		$colorWingull1  = PixelSearch(1032, 218, 1112, 298, 0x99daf7)
+		$colorWingull2  = PixelSearch(1030, 220, 1120, 320, 0x6396bd,15)
+		$colorWingull3  = PixelSearch(870, 210, 970, 320, 0x9fe3ff,15)
+		$colorWingull4  = PixelSearch(870, 210, 970, 320, 0x9ee2ff,15)
 		$colorZigzagoon  = PixelSearch(1040, 317, 1060, 337, 0x786d5b)
 		$colorPoochyena = PixelSearch(1023, 303, 1043, 323, 0xd5d6d5)
 		$Contador+=1
 
-		If  IsArray($colorWingull) or  IsArray($colorZigzagoon) or IsArray($colorPoochyena)  Then
-
+		If  IsArray($colorWingull1) or  IsArray($colorWingull2) or  IsArray($colorWingull3) or  IsArray($colorWingull4) or  IsArray($colorZigzagoon) or IsArray($colorPoochyena)  Then
+			#cs
+			ConsoleWrite("Wingull1: " & $colorWingull1 & @CRLF)
+			ConsoleWrite("Wingull2: " & $colorWingull2 & @CRLF)
+			ConsoleWrite("Wingull3: " & $colorWingull3 & @CRLF)
+			ConsoleWrite("Wingull4: " & $colorWingull4 & @CRLF)
+			#ce
 			$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
 			while $result7 = 0
 				$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
@@ -49,13 +57,13 @@ While $hunting
 
 				send("{NUMPADADD down}")
 				send("{LEFT down}")
-				Sleep(100)
+				Sleep(150)
 				send("{LEFT up}")
 				send("{RIGHT down}")
-				Sleep(100)
+				Sleep(150)
 				send("{RIGHT up}")
 				send("{a down}")
-				Sleep(100)
+				Sleep(150)
 				send("{a up}")
 				send("{NUMPADADD up}")
 				$encuentro= False
@@ -65,7 +73,7 @@ While $hunting
 			EndIf
 
 			Wend
-			ElseIf $Contador >= 150 then
+			ElseIf $Contador >= 55 then
 			send("{NUMPADADD down}")
 			Sleep(250)
 			send("{NUMPADADD up}")
