@@ -35,15 +35,16 @@ While $hunting
 		EndIf
 	Else
 	while $encuentro
+		$colorWurmple = PixelSearch(924, 231, 978, 334, 0xe7696f)
 		$colorWingull1  = PixelSearch(1032, 218, 1112, 298, 0x99daf7)
 		$colorWingull2  = PixelSearch(1030, 220, 1120, 320, 0x6396bd,15)
 		$colorWingull3  = PixelSearch(870, 210, 970, 320, 0x9fe3ff,15)
 		$colorWingull4  = PixelSearch(870, 210, 970, 320, 0x9ee2ff,15)
 		$colorZigzagoon  = PixelSearch(1040, 317, 1060, 337, 0x786d5b)
-		$colorPoochyena = PixelSearch(1023, 303, 1043, 323, 0xd5d6d5)
+		$colorTaillow = PixelSearch(1004, 326, 1024, 346, 0x3b3e5d)
 		$Contador+=1
 
-		If  IsArray($colorWingull1) or  IsArray($colorWingull2) or  IsArray($colorWingull3) or  IsArray($colorWingull4) or  IsArray($colorZigzagoon) or IsArray($colorPoochyena)  Then
+		If  IsArray($colorWingull1) or  IsArray($colorWingull2) or  IsArray($colorWingull3) or  IsArray($colorWingull4) or  IsArray($colorZigzagoon) or IsArray($colorWurmple) or IsArray($colorTaillow) Then
 			#cs
 			ConsoleWrite("Wingull1: " & $colorWingull1 & @CRLF)
 			ConsoleWrite("Wingull2: " & $colorWingull2 & @CRLF)
