@@ -2,6 +2,7 @@
 #include <Misc.au3>
 #include<AutoItConstants.au3>
 Global $Contador=0;
+Global $ContadorScreen=0;
 Global $hunting = True
 Global $encuentro = True
 Global Const $walkingx1 = 969
@@ -37,20 +38,16 @@ While $hunting
 	while $encuentro
 		$colorWurmple = PixelSearch(924, 231, 978, 334, 0xe7696f)
 		$colorWingull1  = PixelSearch(1032, 218, 1112, 298, 0x99daf7)
-		$colorWingull2  = PixelSearch(1030, 220, 1120, 320, 0x6396bd,15)
-		$colorWingull3  = PixelSearch(870, 210, 970, 320, 0x9fe3ff,15)
-		$colorWingull4  = PixelSearch(870, 210, 970, 320, 0x9ee2ff,15)
+		$colorWingull2  = PixelSearch(1030, 220, 1120, 320, 0x6396bd)
+		$colorWingull3  = PixelSearch(870, 210, 970, 320, 0x9fe3ff)
+		$colorWingull4  = PixelSearch(870, 210, 970, 320, 0x9ee2ff)
 		$colorZigzagoon  = PixelSearch(1040, 317, 1060, 337, 0x786d5b)
 		$colorTaillow = PixelSearch(1004, 326, 1024, 346, 0x3b3e5d)
 		$Contador+=1
 
 		If  IsArray($colorWingull1) or  IsArray($colorWingull2) or  IsArray($colorWingull3) or  IsArray($colorWingull4) or  IsArray($colorZigzagoon) or IsArray($colorWurmple) or IsArray($colorTaillow) Then
-			#cs
-			ConsoleWrite("Wingull1: " & $colorWingull1 & @CRLF)
-			ConsoleWrite("Wingull2: " & $colorWingull2 & @CRLF)
-			ConsoleWrite("Wingull3: " & $colorWingull3 & @CRLF)
-			ConsoleWrite("Wingull4: " & $colorWingull4 & @CRLF)
-			#ce
+			 _ScreenCapture_Capture(@MyDocumentsDir & "\Screenshots\screen" & $ContadorScreen & ".jpg", 579, 54, 1350, 519)
+			 $ContadorScreen+=1
 			$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
 			while $result7 = 0
 				$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
@@ -74,7 +71,9 @@ While $hunting
 			EndIf
 
 			Wend
-			ElseIf $Contador >= 55 then
+			ElseIf $Contador >= 75 then
+			_ScreenCapture_Capture(@MyDocumentsDir & "\Screenshots\screen" & $ContadorScreen & ".jpg", 579, 54, 1350, 519)
+			 $ContadorScreen+=1
 			send("{NUMPADADD down}")
 			Sleep(250)
 			send("{NUMPADADD up}")
