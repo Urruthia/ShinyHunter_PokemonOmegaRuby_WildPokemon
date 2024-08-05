@@ -43,13 +43,13 @@ While $hunting
 		$Contador+=1
 
 		If  IsArray($colorSkitty) or  IsArray($colorNincada) or  IsArray($colorWhismur)  or  IsArray($colorZigzagoon)  or IsArray($colorTaillow) Then
-
+ #cs
 			ConsoleWrite("Whismur: " & $colorWhismur & @CRLF)
 			ConsoleWrite("Skitty: " & $colorSkitty & @CRLF)
 			ConsoleWrite("Nincada:  " & $colorNincada & @CRLF)
 			ConsoleWrite("Taillow: " & $colorTaillow & @CRLF)
 			ConsoleWrite("Zigzagoon " & $colorZigzagoon & @CRLF)
-
+#ce
 			$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
 			while $result7 = 0
 				$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
