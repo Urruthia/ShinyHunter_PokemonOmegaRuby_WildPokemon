@@ -1,3 +1,7 @@
+#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_Compile_Both=y
+#AutoIt3Wrapper_UseX64=y
+#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #include<ImageSearch2015.au3>
 #include <Misc.au3>
 #include<AutoItConstants.au3>
@@ -38,31 +42,26 @@ While $hunting
 		EndIf
 	Else
 	while $encuentro
-		$colorElektrike = PixelSearch(948, 269, 968, 289, 0xbcebb2)
-		$colorMinum = PixelSearch(944, 240, 964, 260, 0x76c2ec)
-		$colorGulpin = PixelSearch(977, 276, 999, 296, 0xAADAA1)
-		$colorVoltorb = PixelSearch(929, 249, 949, 269, 0xF79c8d)
+		$colorRoselia = PixelSearch(1004, 347, 1024, 367, 0x93ace6)
+		$colorIllumise = PixelSearch(1007, 326, 1003, 346, 0x8b7494)
+		$colorMarill= PixelSearch(981, 296, 1001, 317, 0x3da5dd)
+		$colorVolbeat = PixelSearch(1007, 316, 1027, 356, 0xfe736d)
 		$colorOddish = PixelSearch(962, 284, 982, 305, 0x5684a4)
-		$colorWingull1  = PixelSearch(1032, 218, 1112, 298, 0x99daf7)
-		$colorWingull2  = PixelSearch(1030, 220, 1120, 320, 0x6396bd)
-		$colorWingull3  = PixelSearch(870, 210, 970, 320, 0x9fe3ff)
-		$colorWingull4  = PixelSearch(870, 210, 970, 320, 0x9ee2ff)
 		$colorZigzagoon  = PixelSearch(1040, 317, 1060, 337, 0x786d5b)
+		$colorSurskit = PixelSearch(1150, 190, 1090, 230, 0x84c6ed)
 		$Contador+=1
 
-		If   IsArray($colorWingull1) or  IsArray($colorWingull2) or  IsArray($colorWingull3) or  IsArray($colorWingull4) or IsArray($colorElektrike) or IsArray($colorMinum) or  IsArray($colorGulpin)  or  IsArray($colorVoltorb)  or IsArray($colorOddish) or IsArray($colorZigzagoon) Then
- #cs_ScreenCapture_Capture(@MyDocumentsDir & "\Screenshots\screen" & $ContadorScreen & ".jpg", 579, 54, 1350, 519)
-
- 			ConsoleWrite("Wingull1: " & $colorWingull1 & @CRLF)
-			ConsoleWrite("Wingull2: " & $colorWingull2 & @CRLF)
-			ConsoleWrite("Wingull3: " & $colorWingull3 & @CRLF)
-			ConsoleWrite("Wingull4: " & $colorWingull4 & @CRLF)
-			ConsoleWrite("Elek: " & $colorElektrike & @CRLF)
-			ConsoleWrite("Mnum: " & $colorMinum & @CRLF)
-			ConsoleWrite("Gulpin: " & $colorGulpin & @CRLF)
+		If   IsArray($colorRoselia) or  IsArray($colorIllumise) or  IsArray($colorMarill) or  IsArray($colorVolbeat) or IsArray($colorSurskit)   or   IsArray($colorOddish) or IsArray($colorZigzagoon) Then
+ _ScreenCapture_Capture(@MyDocumentsDir & "\Screenshots\screen" & $ContadorScreen & ".jpg", 579, 54, 1350, 519)
+#cs
+ 			ConsoleWrite("Illumise: " & $colorIllumise & @CRLF)
+			ConsoleWrite("Roselia: " & $colorRoselia & @CRLF)
+			ConsoleWrite("Marill: " & $colorMarill & @CRLF)
+			ConsoleWrite("Volbeat: " & $colorVolbeat & @CRLF)
 			ConsoleWrite("oddish: " & $colorOddish & @CRLF)
-			ConsoleWrite("Voltorb: " & $colorVoltorb & @CRLF)
-			 #ce
+			ConsoleWrite("Susrskit: " & $colorSurskit & @CRLF)
+			ConsoleWrite("Zigzag: " & $colorZigzagoon & @CRLF)
+#ce
  $ContadorScreen+=1
 			$result7 = _ImageSearchArea($huir,1,$huirx1,$huiry1,$huirx2,$huiry2,$returnx,$returny,0,0)
 			while $result7 = 0
@@ -88,8 +87,8 @@ While $hunting
 
 			Wend
 			ElseIf $Contador >= 65 then
-			#cs _ScreenCapture_Capture(@MyDocumentsDir & "\Screenshots\screen" & $ContadorScreen & ".jpg", 579, 54, 1350, 519)
-			#ce
+			 _ScreenCapture_Capture(@MyDocumentsDir & "\Screenshots\screen" & $ContadorScreen & ".jpg", 579, 54, 1350, 519)
+
 			  $ContadorScreen+=1
 			send("{NUMPADADD down}")
 			Sleep(250)
